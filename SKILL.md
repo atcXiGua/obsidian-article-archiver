@@ -254,16 +254,19 @@ git push
 # 1. 拉取本 skill 仓库
 git clone <本仓库地址> obsidian-article-archiver
 
-# 2. 拷贝到用户级 skills 目录
-mkdir -p ~/.workbuddy/skills/obsidian-article-archiver
-cp -r obsidian-article-archiver/fetcher ~/.workbuddy/skills/obsidian-article-archiver/
-cp obsidian-article-archiver/SKILL.md ~/.workbuddy/skills/obsidian-article-archiver/
+# 2. 拷贝到你所用 AI 助手的用户级 skills 目录（<SKILLS_DIR> 按平台实际路径替换）
+mkdir -p <SKILLS_DIR>/obsidian-article-archiver
+cp -r obsidian-article-archiver/fetcher <SKILLS_DIR>/obsidian-article-archiver/
+cp obsidian-article-archiver/SKILL.md <SKILLS_DIR>/obsidian-article-archiver/
 
 # 3. 配置
-cd ~/.workbuddy/skills/obsidian-article-archiver
+cd <SKILLS_DIR>/obsidian-article-archiver
 cp config.example.json config.json
 # 编辑 config.json 填入 vault_path
 ```
+
+> `<SKILLS_DIR>` 为宿主平台的用户级 skills 目录（各平台约定不同，如某平台为
+> `~/.workbuddy/skills`），请参照所用平台的 skill 安装文档。
 
 - 依赖的现成 skill（可选）：`mineru-pdf-to-structured-markdown`（PDF 输入）。
 - 安装后贴一个 URL 即触发；首次使用会确认库路径。

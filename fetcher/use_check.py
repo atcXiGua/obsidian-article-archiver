@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""article-to-obsidian 同步组件 · 使用前同步（拉最新）
+"""obsidian-article-archiver 同步组件 · 使用前同步（拉最新）
 
 解决「跨 PC 使用时要手动 pull」的痛点：每次归档**开始前**跑一次本脚本，
 自动把本地同步到远端最新状态，保证数据一致性和最新性。

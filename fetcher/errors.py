@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""article-to-obsidian 抓取组件 · 异常层级
+"""obsidian-article-archiver 抓取组件 · 异常层级
 
 把「抓取失败」按成因分成三类，让上层能区分
 「站点反爬 / 网络问题」「页面无正文」「解析器自身 bug」，分别处理。

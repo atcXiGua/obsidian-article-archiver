@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""article-to-obsidian 抓取组件 · 解析层
+"""obsidian-article-archiver 抓取组件 · 解析层
 
 把 HTML 字符串转成「正文 Markdown + 图片清单」。
 不依赖 bs4，用 html.parser 自建轻量提取器，零安装可跑。

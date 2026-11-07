@@ -11,7 +11,7 @@
   2  错误：不在 git 仓库 / 无法 fetch
 
 用法：
-  python sync_check.py [--repo <库根>]
+  python sync_check.py [--repo <库根>] [--skill-dir <skill相对路径>]
 """
 
 from __future__ import annotations
@@ -20,7 +20,9 @@ import argparse
 import subprocess
 import sys
 
-SKILL_DIR = ".workbuddy/skills/article-to-obsidian"
+# 库内 skill 相对路径（从库根算起）。默认按「库内 skills 副本」的通用约定，
+# 具体值取决于宿主平台的 skills 目录结构，可用 --skill-dir 覆盖。
+SKILL_DIR = "skills/obsidian-article-archiver"
 
 
 def _run(args: list[str], cwd: str | None = None) -> str:
@@ -49,8 +51,10 @@ def _count(revspec: str, cwd: str) -> int:
 def main() -> int:
     ap = argparse.ArgumentParser(description="提交前同步检查")
     ap.add_argument("--repo", default=".", help="库根路径")
+    ap.add_argument("--skill-dir", default=SKILL_DIR, help="库内 skill 相对路径")
     args = ap.parse_args()
     repo = args.repo
+    skill_dir = args.skill_dir
 
     # 0) 确认在 git 仓库内
     if not _run(["rev-parse", "--is-inside-work-tree"], cwd=repo):
@@ -75,14 +79,14 @@ def main() -> int:
     changed_files: list[str] = []
 
     # SKILL.md
-    if _run(["diff", "--name-only", "master", "origin/master", "--", f"{SKILL_DIR}/SKILL.md"], cwd=repo):
+    if _run(["diff", "--name-only", "master", "origin/master", "--", f"{skill_dir}/SKILL.md"], cwd=repo):
         skill_changed_remote = True
-        changed_files.append(f"{SKILL_DIR}/SKILL.md")
+        changed_files.append(f"{skill_dir}/SKILL.md")
 
     # fetcher/ 目录
-    if _run(["diff", "--name-only", "master", "origin/master", "--", f"{SKILL_DIR}/fetcher"], cwd=repo):
+    if _run(["diff", "--name-only", "master", "origin/master", "--", f"{skill_dir}/fetcher"], cwd=repo):
         skill_changed_remote = True
-        changed_files.append(f"{SKILL_DIR}/fetcher/")
+        changed_files.append(f"{skill_dir}/fetcher/")
 
     # 4) 分类判定
     print(f"本地领先 {ahead} 个提交，落后远端 {behind} 个提交。")

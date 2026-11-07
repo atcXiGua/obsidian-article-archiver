@@ -1,28 +1,32 @@
 # obsidian-article-archiver
 
-把网页文章**完整地**归档到本地 Obsidian 库的 WorkBuddy Skill。
+把网页文章**完整地**归档到本地 Obsidian 库的通用 skill。
 
 - **完整留存**：不是摘要、不是精编，是原文的完整保留 + 出处 + 标签
 - **零依赖**：抓取组件纯 Python 标准库，换机零安装
 - **可配置**：路径、目录名、分类体系、翻译策略全部集中在 `config.json`
 - **多平台**：公众号 / X(Twitter) / 知乎 / Medium / Substack / 博客 / 任意网页
 - **图谱友好**：自动补一级主题标签、建双链、生成 MOC 主页和图谱配色
+- **宿主无关**：不绑定任何特定 AI 助手，任何支持 skill 机制的平台都能装
 
 ## 快速开始
 
 ```bash
-# 1. 安装 skill 到用户级 skills 目录
-mkdir -p ~/.workbuddy/skills/obsidian-article-archiver
-cp -r fetcher ~/.workbuddy/skills/obsidian-article-archiver/
-cp SKILL.md ~/.workbuddy/skills/obsidian-article-archiver/
+# 1. 安装 skill 到你所用 AI 助手的 skills 目录（以 <SKILLS_DIR> 占位，按实际平台替换）
+mkdir -p <SKILLS_DIR>/obsidian-article-archiver
+cp -r fetcher <SKILLS_DIR>/obsidian-article-archiver/
+cp SKILL.md <SKILLS_DIR>/obsidian-article-archiver/
 
 # 2. 配置
-cd ~/.workbuddy/skills/obsidian-article-archiver
+cd <SKILLS_DIR>/obsidian-article-archiver
 cp config.example.json config.json
 #    编辑 config.json，填入你的 Obsidian 库路径 vault_path
 
-# 3. 使用：在 WorkBuddy 里贴一个文章链接即可触发归档
+# 3. 使用：在支持 skill 的 AI 助手里贴一个文章链接即可触发归档
 ```
+
+> `<SKILLS_DIR>` 是你所用平台的用户级 skills 目录。例如某平台为 `~/.workbuddy/skills`，
+> 其他平台各有约定路径，请参照该平台的 skill 安装文档填写。
 
 ## 配置说明
 

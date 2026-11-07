@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""article-to-obsidian 分类管理组件 · 归档后的标准化与图谱关联
+"""obsidian-article-archiver 分类管理组件 · 归档后的标准化与图谱关联
 
 把「标签收敛 → 物理分文件夹 → 双链关联 → MOC/图谱配色」沉淀为可复用命令。
 归档落盘只是第一步；本组件负责把新笔记纳入既有的分类体系与知识图谱。

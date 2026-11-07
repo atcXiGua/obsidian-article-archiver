@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""article-to-obsidian 抓取组件 · 统一编排入口
+"""obsidian-article-archiver 抓取组件 · 统一编排入口
 
 这是 skill 抓取动作的「唯一命令行入口」。模型/流程只需调这一条命令，
 平台差异、降级、防盗链、正文提取、元数据抓取、图片下载全部封装在 fetcher 包内。

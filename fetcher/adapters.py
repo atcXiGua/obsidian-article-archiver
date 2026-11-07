@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""article-to-obsidian 抓取组件 · 平台适配层
+"""obsidian-article-archiver 抓取组件 · 平台适配层
 
 每个平台一个 dict，声明「正文选择器 / 图片下载规则 / 特殊请求头 / 抓取入口」。
 核心逻辑（transport / extract）不看平台差异，只看这里的配置——

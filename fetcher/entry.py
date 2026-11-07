@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""article-to-obsidian 抓取组件 · 特殊入口层
+"""obsidian-article-archiver 抓取组件 · 特殊入口层
 
 针对「直抓 HTML 拿不到正文」的站点，提供专用入口：
   - x_status：X 帖子，直抓 + oEmbed 兜底

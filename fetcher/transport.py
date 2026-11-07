@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""article-to-obsidian 抓取组件 · 传输层
+"""obsidian-article-archiver 抓取组件 · 传输层
 
 负责「把 HTML / 图片字节从远端拿回来」这一件事，与解析、平台适配解耦。
 所有平台共用：统一 UA / Referer 注入、重试、编码探测、超时控制。
