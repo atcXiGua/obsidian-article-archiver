@@ -1,0 +1,11 @@
+# 真实配置不提交（含个人 vault 路径），只提交 config.example.json 模板
+config.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# 系统
+.DS_Store
+Thumbs.db

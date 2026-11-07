@@ -1,0 +1,32 @@
+{
+  "vault_path": "D:/your/obsidian/vault",
+  "notes_dir": "notes",
+  "attachments_dir": "attachments",
+  "language": "zh-CN",
+  "translate": true,
+  "taxonomy": {
+    "primary_themes": [
+      "技术",
+      "产品",
+      "设计",
+      "商业",
+      "个人成长"
+    ],
+    "title_to_theme": [
+      ["数仓", "技术"],
+      ["数据", "技术"],
+      ["AI", "技术"],
+      ["产品", "产品"],
+      ["设计", "设计"],
+      ["商业", "商业"],
+      ["成长", "个人成长"]
+    ],
+    "graph_colors": [
+      {"query": "tag:#主题/技术", "rgb": 14048348},
+      {"query": "tag:#主题/产品", "rgb": 4521984},
+      {"query": "tag:#主题/设计", "rgb": 16750848},
+      {"query": "tag:#主题/商业", "rgb": 16729344},
+      {"query": "tag:#主题/个人成长", "rgb": 4359936}
+    ]
+  }
+}
